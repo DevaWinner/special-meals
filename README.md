@@ -22,7 +22,8 @@
 # 📖 Leader Board <a name="about-project"></a>
 
 
-**Special Meals** project is built using an API. The project allows users to submit their scores to a leaderboard, and the scores are then displayed in a ranked order. The API used to store the scores is a simple API.
+**Special Meals** project is built using an API. The project allows users to view meals they like, like the meals and add comments to the meals they like. It uses an internal API to store the user interactions with the meals. The project is built using webpack and vanilla JavaScript. 
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
