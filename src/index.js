@@ -1,5 +1,5 @@
 import './styles/style.css';
-
+import logo from './assets/logo.png';
 import fetchMeals from './api/fetchmeals.js';
 import { createMealCard, truncateTitle } from './modules/utils.js';
 
@@ -16,3 +16,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     mealContainer.innerHTML = 'Failed to fetch meals.';
   }
 });
+
+const logoImage = document.getElementById('logo');
+logoImage.src = logo;
