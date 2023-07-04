@@ -2,6 +2,7 @@ import './styles/style.css';
 import logo from './assets/logo.png';
 import fetchMeals from './api/fetchmeals.js';
 import { createMealCard, truncateTitle } from './modules/utils.js';
+import displayPopup from  './modules/popup.js'
 
 document.addEventListener("DOMContentLoaded", async () => {
   const mealContainer = document.getElementById("mealContainer");
