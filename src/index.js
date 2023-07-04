@@ -1,4 +1,5 @@
 import './styles/style.css';
+import './styles/popup.css'
 import logo from './assets/logo.png';
 import fetchMeals from './api/fetchmeals.js';
 import { createMealCard, truncateTitle } from './modules/utils.js';
