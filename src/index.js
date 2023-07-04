@@ -3,17 +3,20 @@ import logo from './assets/logo.png';
 import fetchMeals from './api/fetchmeals.js';
 import { createMealCard, truncateTitle } from './modules/utils.js';
 
-document.addEventListener('DOMContentLoaded', async () => {
-  const mealContainer = document.getElementById('mealContainer');
+document.addEventListener("DOMContentLoaded", async () => {
+  const mealContainer = document.getElementById("mealContainer");
   try {
-    const meals = await fetchMeals('Seafood');
+    const meals = await fetchMeals("Seafood");
     meals.forEach((meal) => {
       const mealCard = createMealCard(meal, truncateTitle);
-
+      const commentButton = mealCard.querySelector('.comments-button');
+      commentButton.addEventListener("click", () => {
+        displayPopup(meal);
+      });
       mealContainer.appendChild(mealCard);
     });
   } catch (error) {
-    mealContainer.innerHTML = 'Failed to fetch meals.';
+    mealContainer.innerHTML = "Failed to fetch meals.";
   }
 });
 
