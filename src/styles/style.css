@@ -8,3 +8,37 @@
 body {
   font-family: 'Belanosima', sans-serif;
 }
+
+.header {
+  display: flex;
+  gap: 10%;
+  list-style-type: none;
+  margin: 5%;
+  justify-content: center;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+}
+
+p {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.license {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 2%;
+}
+
+.footer {
+  border: 2px solid black;
+  width: 98%;
+  height: 100px;
+  margin: 1%;
+  justify-content: center;
+}
