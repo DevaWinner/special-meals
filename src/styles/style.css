@@ -8,9 +8,76 @@
 body {
   font-family: 'Belanosima', sans-serif;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: antiquewhite;
+  height: 100vh;
+}
+
+/* ========= Header Styling ========== */
+
+header,
+footer {
+  display: flex;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 80px;
+  width: 95%;
+  align-items: center;
+  position: relative;
+  margin: 1.5em 5em;
+  gap: 1em;
+  padding: 0 1em;
+}
+
+.logo {
+  padding-left: 5%;
+  width: 90px;
+  height: 90px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 10px 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2em;
+  list-style-type: none;
+  width: 100%;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-links li {
+  border-right: 3.5px solid #f44336;
+  padding: 0 1em;
+}
+
+.nav-links a:hover {
+  color: #f44336;
+}
+
+p {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* ======== Items display styling ======= */
+main {
+  height: calc(85vh);
+  overflow: auto;
+  border-radius: 0.5em;
 }
 
 .container {
@@ -18,7 +85,7 @@ body {
   grid-template-columns: repeat(3, auto);
   grid-gap: 5em;
   width: 75%;
-  margin: 5em;
+  margin: 1.5em 5em;
 }
 
 .meal-card {
@@ -109,36 +176,14 @@ body {
   color: white;
 }
 
-.header {
-  display: flex;
-  gap: 10%;
-  list-style-type: none;
-  margin: 5%;
-  justify-content: center;
-}
-
-.logo {
-  width: 70px;
-  height: 70px;
-}
-
-p {
-  font-family: 'Belanosima', sans-serif;
-  font-size: 30px;
-  font-weight: 600;
-}
+/* ============== Footer ============ */
 
 .license {
-  font-family: 'Belanosima', sans-serif;
-  font-size: 20px;
+  font-size: 1.4rem;
   font-weight: 600;
-  padding: 2%;
+  padding: 0 5%;
 }
 
 .footer {
-  border: 2px solid black;
   width: 98%;
-  height: 100px;
-  margin: 1%;
-  justify-content: center;
 }
