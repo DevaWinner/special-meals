@@ -1,4 +1,6 @@
-const showPopup = (meal) => {
+import fetchComments from "../api/fetchcomments.js";
+
+const showPopup = async (meal) => {
   const popup = document.createElement('div');
   popup.className = 'popup';
 
@@ -45,7 +47,26 @@ const showPopup = (meal) => {
     popup.remove();
   });
 
+
+  const commentsContainer = document.createElement("div");
+  commentsContainer.className = "comments-container";
+
+  const commentsHeading = document.createElement("h3");
+  commentsHeading.innerHTML = `<p>Comments <span id="comment-counter">(3)</span> </p>`;
+  commentsContainer.appendChild(commentsHeading);
+
+  
+  popupContent.appendChild(commentsContainer);
+
+  const comments = await fetchComments(meal.id);
+  comments.forEach((comment) => {
+    const commentElement = document.createElement("div");
+    commentElement.textContent = comment.text;
+    commentsContainer.appendChild(commentElement);
+  });
+
   popup.appendChild(popupContent);
+  
   document.body.appendChild(popup);
 };
 
