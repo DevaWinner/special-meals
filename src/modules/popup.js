@@ -29,10 +29,15 @@ const showPopup = (meal) => {
   mealTitle.className = "meal-title";
   popupDescription.appendChild(mealTitle);
 
+  const instructionContainer = document.createElement("div");
+  instructionContainer.className = "instruction-container";
+
   const mealInstructions = document.createElement("p");
   mealInstructions.textContent = meal.strInstructions;
   mealInstructions.className = "meal-instructions";
-  popupDescription.appendChild(mealInstructions);
+  instructionContainer.appendChild(mealInstructions);
+
+  popupDescription.appendChild(instructionContainer);
 
   popupContent.appendChild(popupDescription);
 
