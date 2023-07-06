@@ -20,6 +20,30 @@ const showPopup = async (meal) => {
     popup.style.display = 'none';
   });
 
+  const commentsList = document.getElementById('comments-list');
+  commentsList.innerHTML = ''; // Clear previously fetched comments
+
+  const comments = await fetchComments(meal.id);
+  comments.forEach((comment) => {
+    const commentElement = document.createElement('li');
+    commentElement.className = 'comment-element';
+
+    const commentDate = document.createElement('span');
+    commentDate.className = 'comment-date';
+    commentDate.textContent = comment.creation_date;
+    commentElement.appendChild(commentDate);
+
+    const commentUser = document.createElement('span');
+    commentUser.className = 'comment-user';
+    commentUser.textContent = comment.username;
+    commentElement.appendChild(commentUser);
+
+    const commentText = document.createElement('span');
+    commentText.textContent = comment.comment;
+    commentElement.appendChild(commentText);
+
+    commentsList.appendChild(commentElement);
+  });
 };
 
 export default showPopup;
