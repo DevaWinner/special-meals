@@ -1,4 +1,5 @@
-export const createMealCard = (meal, truncateTitle) => {
+import getlikes from "./getlikes.js";
+export const createMealCard = async (meal, truncateTitle) => {
   const mealCard = document.createElement('div');
   mealCard.className = 'meal-card';
 
@@ -21,10 +22,14 @@ export const createMealCard = (meal, truncateTitle) => {
   titleContainer.appendChild(favoriteButton);
 
   mealCard.appendChild(titleContainer);
-
+  
   const likesCounter = document.createElement('div');
   likesCounter.className = 'likes-counter';
-  likesCounter.innerHTML = `<span>${meal.strCategory}</span>`;
+  
+  const likedata = await getlikes();
+  likedata.forEach(element => {
+    likesCounter.textContent = element.likes
+  });
   mealCard.appendChild(likesCounter);
 
   const buttonsContainer = document.createElement('div');

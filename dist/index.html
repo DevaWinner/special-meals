@@ -6,25 +6,39 @@
   <title>Special Meal</title>
 
   <link rel="stylesheet" href="./styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/8d20eebc7a.js" crossorigin="anonymous"></script>
 <script defer src="main.js"></script></head>
 <body>
+
   <header>
-    <ul class="header">
-      <li class="logo"><img src="./assets/logo.png" alt="logo"></li>
-      <li class="special"><p>Special items</p></li>
-      <li class="veg"><p>veg</p></li>
-      <li class="non-veg"><p>Non-Veg</p></li>
+    <div class="logo">
+      <img src="" alt="logo" id="logo">
+    </div>
+    <ul class="nav-links">
+      <a href="#">
+        <li class="Sea Food"><p>Sea Food <span id="count"> (50)</span> </li>
+      </a>
+      <a href="#">
+        <li class="Dessert"><p>Dessert</p></li>
+      </a>
+      <a href="#">
+        <li class="Vegetarian"><p>Vegetarian</p></li>
+      </a>
     </ul>
+    
   </header>
+
   <main>
   <div class="container" id="mealContainer"></div>
   </main>
+
   <footer>
     <div class="footer">
       <p class="license">Created by Microverse Under cc license....</p>
     </div>
   </footer>
+
+
   <script src="./index.js" type="module"></script>
 </body>
 </html>
