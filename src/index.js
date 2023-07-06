@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', async () => {
       mealCard.id = `mealCard-${index + 1}`;
 
       const commentButton = mealCard.querySelector('.comments-button');
-commentButton.addEventListener('click', () => {
-  showPopup(meal);
-});
+      commentButton.addEventListener('click', () => {
+        showPopup(meal);
+      });
 
       mealContainer.appendChild(mealCard);
     });

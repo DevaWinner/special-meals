@@ -1,8 +1,6 @@
 import fetchComments from '../api/fetchcomments.js';
-import { formatDate } from './utils.js';
 
 const showPopup = async (meal) => {
-  const appId = "KfZAQJtzqeC2UIXf6vLd";
   const popup = document.getElementById('popup');
   const mealImage = document.getElementById('popup-img');
   const mealTitle = document.getElementById('meal-title');

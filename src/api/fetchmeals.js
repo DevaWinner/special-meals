@@ -5,7 +5,7 @@ const fetchMeals = async () => {
       throw new Error('Failed to fetch meals.');
     }
     const data = await response.json();
- 
+
     const mealsWithId = data.meals.map((meal, index) => ({
       ...meal,
       id: index + 1,
