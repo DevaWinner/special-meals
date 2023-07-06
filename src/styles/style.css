@@ -5,13 +5,19 @@
   padding: 0;
 }
 
+:root {
+  --main: #f44336;
+  --second: #f9f9f9;
+  --background: antiquewhite;
+}
+
 body {
   font-family: 'Belanosima', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: antiquewhite;
+  background-color: var(--background);
   height: 100vh;
 }
 
@@ -20,7 +26,7 @@ body {
 header,
 footer {
   display: flex;
-  background-color: #f9f9f9;
+  background-color: var(--second);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 80px;
@@ -59,12 +65,12 @@ footer {
 }
 
 .nav-links li {
-  border-right: 3.5px solid #f44336;
+  border-right: 3.5px solid var(--main);
   padding: 0 1em;
 }
 
 .nav-links a:hover {
-  color: #f44336;
+  color: var(--main);
 }
 
 p {
@@ -92,7 +98,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: var(--second);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 480px;
@@ -134,21 +140,7 @@ main {
 
 .icon {
   font-size: 1.6rem;
-  color: #f44336;
-}
-
-.buttons button {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding: 0.7em 5em;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  border: none;
-  background-color: #f44336;
-  color: white;
-  font-weight: bold;
+  color: var(--main);
 }
 
 .title button:hover {
@@ -164,16 +156,36 @@ main {
 
 .buttons {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1.2em;
   width: 100%;
-  gap: 1em;
+  margin-top: 3.5em;
+}
+
+.buttons button {
+  padding: 0.7em 2em;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.buttons button:first-child {
+  background-color: var(--main);
+  color: var(--second);
+  border: 2px solid #f44336;
+}
+
+.buttons button:last-child {
+  background-color: #f9f9f9;
+  color: #f44336;
+  border: 2px solid #f44336;
 }
 
 .buttons button:hover {
-  background-color: #f31505;
-  color: white;
+  transform: scale(1.1);
 }
 
 /* ============== Footer ============ */
