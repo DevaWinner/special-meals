@@ -5,7 +5,12 @@ const fetchMeals = async () => {
       throw new Error('Failed to fetch meals.');
     }
     const data = await response.json();
-    return data.meals;
+ 
+    const mealsWithId = data.meals.map((meal, index) => ({
+      ...meal,
+      id: index + 1,
+    }));
+    return mealsWithId;
   } catch (error) {
     return [];
   }
