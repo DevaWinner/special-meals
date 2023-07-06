@@ -1,3 +1,4 @@
+import getlikes from "./getlikes.js";
 const createMealCard = (meal, truncateTitle) => {
   const mealCard = document.createElement('div');
   mealCard.className = 'meal-card';
