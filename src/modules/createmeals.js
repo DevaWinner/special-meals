@@ -26,7 +26,9 @@ const createMealCard = (meal, truncateTitle) => {
 
   const likesCounter = document.createElement('div');
   likesCounter.className = 'likes-counter';
-  likesCounter.innerHTML = `<span>${meal.strCategory}</span>`;
+  const likesSpan = document.createElement('span');
+  likesSpan.textContent = 'Loading...';
+  likesCounter.appendChild(likesSpan);
   mealCard.appendChild(likesCounter);
 
   const buttonsContainer = document.createElement('div');
@@ -42,6 +44,15 @@ const createMealCard = (meal, truncateTitle) => {
   buttonsContainer.appendChild(reservationsButton);
 
   mealCard.appendChild(buttonsContainer);
+  
+  getlikes()
+    .then((likes) => {
+      likesSpan.textContent = likes.length; // Update the likes span with the fetched value
+    })
+    .catch((error) => {
+      console.error('Error fetching likes:', error);
+      likesSpan.textContent = 'N/A'; // Show "N/A" if there was an error fetching the likes
+    });
 
   return mealCard;
 };
