@@ -1,52 +1,52 @@
-const showPopup = (meal) => {
-  const popup = document.createElement('div');
-  popup.className = 'popup';
+import fetchComments from '../api/fetchcomments.js';
 
-  const popupContent = document.createElement('div');
-  popupContent.className = 'popup-content';
+const showPopup = async (meal) => {
+  const popup = document.getElementById('popup');
+  const mealImage = document.getElementById('popup-img');
+  const mealTitle = document.getElementById('meal-title');
+  const mealInstructions = document.getElementById('meal-instructions');
 
-  const popupHeading = document.createElement('div');
-  popupHeading.className = 'popup-heading';
-
-  const mealImage = document.createElement('img');
   mealImage.src = meal.strMealThumb;
   mealImage.alt = meal.strMeal;
-  popupHeading.appendChild(mealImage);
-
-  const closePopupButton = document.createElement('button');
-  closePopupButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-  closePopupButton.className = 'close-popup-button';
-  closePopupButton.classList.add('close-button');
-  popupHeading.appendChild(closePopupButton);
-
-  popupContent.appendChild(popupHeading);
-
-  const popupDescription = document.createElement('div');
-  popupDescription.className = 'popup-description';
-
-  const mealTitle = document.createElement('h2');
   mealTitle.textContent = meal.strMeal;
-  mealTitle.className = 'meal-title';
-  popupDescription.appendChild(mealTitle);
-
-  const instructionContainer = document.createElement('div');
-  instructionContainer.className = 'instruction-container';
-
-  const mealInstructions = document.createElement('p');
   mealInstructions.textContent = meal.strInstructions;
-  mealInstructions.className = 'meal-instructions';
-  instructionContainer.appendChild(mealInstructions);
 
-  popupDescription.appendChild(instructionContainer);
+  popup.style.display = 'block';
 
-  popupContent.appendChild(popupDescription);
-
-  closePopupButton.addEventListener('click', () => {
-    popup.remove();
+  const closePopup = document.getElementById('close-popup');
+  closePopup.addEventListener('click', () => {
+    popup.style.display = 'none';
   });
 
-  popup.appendChild(popupContent);
-  document.body.appendChild(popup);
+  const commentsList = document.getElementById('comments-list');
+  commentsList.innerHTML = ''; // Clear previously fetched comments
+
+  const comments = await fetchComments(meal.id);
+  comments.forEach((comment) => {
+    const commentElement = document.createElement('li');
+    commentElement.className = 'comment-element';
+
+    const userBox = document.createElement('span');
+    userBox.className = 'user-box';
+
+    const commentUser = document.createElement('span');
+    commentUser.className = 'comment-user';
+    commentUser.textContent = comment.username;
+    userBox.appendChild(commentUser);
+
+    const commentDate = document.createElement('span');
+    commentDate.className = 'comment-date';
+    commentDate.textContent = comment.creation_date;
+    userBox.appendChild(commentDate);
+
+    commentElement.appendChild(userBox);
+
+    const commentText = document.createElement('span');
+    commentText.innerHTML = `- ${comment.comment}`;
+    commentElement.appendChild(commentText);
+
+    commentsList.appendChild(commentElement);
+  });
 };
 
 export default showPopup;

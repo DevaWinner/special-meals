@@ -6,6 +6,7 @@
 }
 
 .popup {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,11 +61,11 @@
 }
 
 .meal-instructions {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.5em;
   text-align: justify;
   font-weight: 300;
-  padding: 1em;
+  padding: 0.5em 1em;
 }
 
 .close-button {
@@ -77,4 +78,56 @@
   border: none;
   cursor: pointer;
   font-size: 2rem;
+}
+
+/* =========== Comment Styling =========== */
+
+.comments-container {
+  margin-top: 0.5em;
+  align-self: start;
+  display: flex;
+  gap: 1em;
+}
+
+.comment-box {
+  display: flex;
+  flex-direction: column;
+  width: 25em;
+  margin-top: 0.5em;
+  height: 21em;
+  gap: 1em;
+}
+
+.comment-box h3 {
+  font-size: 1.7em;
+  font-weight: 400;
+}
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+  height: 260px;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: 0 0.5em;
+}
+
+.comment-list li {
+  list-style: none;
+  width: 360px;
+  height: 100%;
+  border-radius: 0.5em;
+  background-color: #f5f5f5;
+  padding: 0.8em 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 1rem;
+}
+
+.user-box {
+  display: flex;
+  justify-content: space-between;
 }
