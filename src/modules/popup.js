@@ -28,18 +28,23 @@ const showPopup = async (meal) => {
     const commentElement = document.createElement('li');
     commentElement.className = 'comment-element';
 
-    const commentDate = document.createElement('span');
-    commentDate.className = 'comment-date';
-    commentDate.textContent = comment.creation_date;
-    commentElement.appendChild(commentDate);
+    const userBox = document.createElement('span');
+    userBox.className = 'user-box';
 
     const commentUser = document.createElement('span');
     commentUser.className = 'comment-user';
     commentUser.textContent = comment.username;
-    commentElement.appendChild(commentUser);
+    userBox.appendChild(commentUser);
+
+    const commentDate = document.createElement('span');
+    commentDate.className = 'comment-date';
+    commentDate.textContent = comment.creation_date;
+    userBox.appendChild(commentDate);
+
+    commentElement.appendChild(userBox);
 
     const commentText = document.createElement('span');
-    commentText.textContent = comment.comment;
+    commentText.innerHTML = `- ${comment.comment}`;
     commentElement.appendChild(commentText);
 
     commentsList.appendChild(commentElement);
