@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-console
+
 import getLikes from './getlikes.js';
 
 const createMealCard = (meal, truncateTitle) => {

@@ -42,7 +42,7 @@
           </button>
         </div>
         <div class="popup-description">
-          <h2 id="meal-title"></h2>
+          <h2 id="meal-title" class="meal-title"></h2>
           <div class="instruction-container">
             <p class="meal-instructions" id="meal-instructions"></p>
           </div>
@@ -55,6 +55,12 @@
             </h3>
             <ul id="comments-list" class="comment-list"></ul>
           </div>
+
+          <form id="comment-form" class="comment-form">
+            <input id="comment-user" type="text" placeholder="Your name" class="comment-user">
+            <textarea name="comment" id="comment-input" cols="30" rows="10" placeholder="Write a comment..."></textarea>
+            <button type="submit" class="comment-button">Comment</button>
+          </form>
         </div>
       </div>
     </div>  

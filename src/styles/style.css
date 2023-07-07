@@ -29,7 +29,7 @@ footer {
   background-color: var(--second);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 80px;
+  height: 70px;
   width: 95%;
   align-items: center;
   position: relative;
@@ -56,12 +56,12 @@ footer {
   gap: 2em;
   list-style-type: none;
   width: 100%;
+  margin-left: 1.5em;
 }
 
 .nav-links a {
   text-decoration: none;
   color: black;
-  font-weight: bold;
 }
 
 .nav-links li {
@@ -75,8 +75,8 @@ footer {
 
 p {
   font-family: 'Belanosima', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 550;
 }
 
 /* ======== Items display styling ======= */
@@ -101,7 +101,7 @@ main {
   background-color: var(--second);
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 480px;
+  height: 440px;
   width: 400px;
   gap: 1em;
   transition: transform 0.1s ease-in-out;
@@ -192,7 +192,7 @@ main {
 
 .license {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 0 5%;
 }
 
