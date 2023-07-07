@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-alert
 
 import fetchComments from '../api/fetchcomments.js';
-import { formatDate} from './utils.js';
+import { formatDate } from './utils.js';
 import updateCommentCounter from './commentcounter.js';
 
 const createCommentElement = (comment) => {
@@ -67,7 +67,7 @@ const showPopup = async (meal) => {
     });
 
     updateCommentCounter(comments.length);
-    
+
     commentForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const username = commentUserInput.value;
