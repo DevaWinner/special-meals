@@ -1,12 +1,10 @@
 // eslint-disable-next-line no-console
 
-import getLikes from './getlikes.js';
+const createMealCard = (meal, truncateTitle, postLike, fetchLikes) => {
+  const appId = 'KfZAQJtzqeC2UIXf6vLd';
 
-const createMealCard = (meal, truncateTitle) => {
   const mealCard = document.createElement('div');
   mealCard.className = 'meal-card';
-
-  // Assign the meal ID to the meal card
   mealCard.id = `meal-${meal.id}`;
 
   const mealImage = document.createElement('img');
@@ -49,18 +47,26 @@ const createMealCard = (meal, truncateTitle) => {
 
   mealCard.appendChild(buttonsContainer);
 
-  getLikes()
-    .then((likes) => {
-      if (likes.length === 0) {
-        likesSpan.textContent = '0 likes';
-      } else {
-        likesSpan.innerHTML = `${likes.length} likes`;
-      }
-    })
-    .catch((error) => {
-      console.error('Error fetching likes:', error);
-      likesSpan.textContent = 'N/A';
-    });
+  const updateLikesCounter = async () => {
+    try {
+      const likes = await fetchLikes(appId);
+      const mealLikes = likes.filter((like) => like.item_id === meal.id);
+      likesSpan.textContent = mealLikes.length > 0 ? mealLikes[0].likes : 0;
+    } catch (error) {
+      console.error('Failed to get likes:', error);
+    }
+  };
+
+  favoriteButton.addEventListener('click', async () => {
+    try {
+      await postLike(appId, meal.id);
+      await updateLikesCounter();
+    } catch (error) {
+      console.error('Failed to post like:', error);
+    }
+  });
+
+  updateLikesCounter();
 
   return mealCard;
 };
