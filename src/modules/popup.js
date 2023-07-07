@@ -104,7 +104,7 @@ const showPopup = async (meal) => {
             });
 
             updateCommentCounter(comments.length);
-            
+
             commentUserInput.value = '';
             commentInput.value = '';
           } else {
