@@ -1,7 +1,10 @@
-const itemCounter = async () => {
-  const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
-  const data = await response.json();
-  return data.meals.length;
+const updateMealCounter = () => {
+  const mealContainer = document.getElementById('mealContainer');
+  const mealCounter = document.getElementById('count');
+  const mealElements = mealContainer.getElementsByClassName('meal-card');
+  const mealCount = mealElements.length;
+
+  mealCounter.textContent = `(${mealCount})`;
 };
 
-export default itemCounter;
+export default updateMealCounter;
