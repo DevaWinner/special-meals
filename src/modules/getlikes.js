@@ -1,17 +1,23 @@
-const getLikes = async (itemId) => {
+const fetchLikes = async (appId) => {
   try {
-    const appId = 'KfZAQJtzqeC2UIXf6vLd';
-    const response = await fetch(
-      `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes?item_id=${itemId}`,
-    );
-    if (!response.ok) {
-      throw new Error('Failed to fetch comments.');
+    const involvementLikeUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/likes`;
+
+    const response = await fetch(involvementLikeUrl, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
     }
-    const data = await response.json();
-    return data;
+    throw new Error('Failed to fetch likes');
   } catch (error) {
+    console.error('Failed to fetch likes:', error);
     return [];
   }
 };
 
-export default getLikes;
+export default fetchLikes;

@@ -5,13 +5,18 @@ import fetchMeals from './api/fetchmeals.js';
 import { truncateTitle } from './modules/utils.js';
 import createMealCard from './modules/createmeals.js';
 import showPopup from './modules/popup.js';
+import updateMealCounter from './modules/counter.js';
+import fetchLikes from './modules/getlikes.js';
+import postLike from './modules/postlikes.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const mealContainer = document.getElementById('mealContainer');
+
   try {
     const meals = await fetchMeals('Seafood');
+
     meals.forEach((meal, index) => {
-      const mealCard = createMealCard(meal, truncateTitle);
+      const mealCard = createMealCard(meal, truncateTitle, postLike, fetchLikes);
 
       mealCard.id = `mealCard-${index + 1}`;
 
@@ -21,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       });
 
       mealContainer.appendChild(mealCard);
+      updateMealCounter();
     });
   } catch (error) {
     mealContainer.innerHTML = 'Failed to fetch meals.';
