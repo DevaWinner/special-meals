@@ -100,3 +100,11 @@ describe('updateCommentCounter', () => {
       updateCommentCounter();
     }).not.toThrow();
   });
+
+  test('should handle no comments list element', () => {
+    // Remove the comments list element
+    document.getElementById('comments-list').remove();
+    expect(() => {
+      updateCommentCounter();
+    }).not.toThrow();
+  });
