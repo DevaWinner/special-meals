@@ -40,7 +40,7 @@ const showPopup = async (meal) => {
       commentsList.appendChild(commentElement);
     });
 
-    updateCommentCounter(comments.length); // Update comment counter
+ 
 
     commentForm.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -78,7 +78,7 @@ const showPopup = async (meal) => {
               commentsList.appendChild(commentElement);
             });
 
-            updateCommentCounter(comments.length); // Update comment counter
+
 
             commentUserInput.value = '';
             commentInput.value = '';
@@ -125,11 +125,6 @@ const createCommentElement = (comment) => {
   commentElement.appendChild(commentContent);
 
   return commentElement;
-};
-
-const updateCommentCounter = (count) => {
-  const commentsCounter = document.getElementById('comment-counter');
-  commentsCounter.textContent = `(${count})`;
 };
 
 export default showPopup;
