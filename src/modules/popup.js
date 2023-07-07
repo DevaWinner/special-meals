@@ -1,5 +1,34 @@
+// eslint-disable-next-line no-console
+// eslint-disable-next-line no-alert
+
 import fetchComments from '../api/fetchcomments.js';
-import {formatDate} from './utils.js'
+import { formatDate } from './utils.js';
+
+const createCommentElement = (comment) => {
+  const commentElement = document.createElement('li');
+  commentElement.className = 'comment-element';
+
+  const userBox = document.createElement('span');
+  userBox.className = 'user-box';
+
+  const commentUser = document.createElement('span');
+  commentUser.className = 'comment-user';
+  commentUser.textContent = comment.username;
+  userBox.appendChild(commentUser);
+
+  const commentDate = document.createElement('span');
+  commentDate.className = 'comment-date';
+  commentDate.textContent = formatDate(comment.creation_date);
+  userBox.appendChild(commentDate);
+
+  commentElement.appendChild(userBox);
+
+  const commentContent = document.createElement('span');
+  commentContent.innerHTML = `- ${comment.comment}`;
+  commentElement.appendChild(commentContent);
+
+  return commentElement;
+};
 
 const showPopup = async (meal) => {
   const appId = 'KfZAQJtzqeC2UIXf6vLd';
@@ -36,8 +65,6 @@ const showPopup = async (meal) => {
       commentsList.appendChild(commentElement);
     });
 
- 
-
     commentForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const username = commentUserInput.value;
@@ -57,7 +84,7 @@ const showPopup = async (meal) => {
                 username,
                 comment: commentText,
               }),
-            }
+            },
           );
 
           if (response.ok) {
@@ -73,8 +100,6 @@ const showPopup = async (meal) => {
               const commentElement = createCommentElement(comment);
               commentsList.appendChild(commentElement);
             });
-
-
 
             commentUserInput.value = '';
             commentInput.value = '';
@@ -95,32 +120,6 @@ const showPopup = async (meal) => {
   // Clear form inputs
   commentUserInput.value = '';
   commentInput.value = '';
-};
-
-const createCommentElement = (comment) => {
-  const commentElement = document.createElement('li');
-  commentElement.className = 'comment-element';
-
-  const userBox = document.createElement('span');
-  userBox.className = 'user-box';
-
-  const commentUser = document.createElement('span');
-  commentUser.className = 'comment-user';
-  commentUser.textContent = comment.username;
-  userBox.appendChild(commentUser);
-
-  const commentDate = document.createElement('span');
-  commentDate.className = 'comment-date';
-  commentDate.textContent = formatDate(comment.creation_date);
-  userBox.appendChild(commentDate);
-
-  commentElement.appendChild(userBox);
-
-  const commentContent = document.createElement('span');
-  commentContent.innerHTML = `- ${comment.comment}`;
-  commentElement.appendChild(commentContent);
-
-  return commentElement;
 };
 
 export default showPopup;
