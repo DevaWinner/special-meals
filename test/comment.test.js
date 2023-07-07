@@ -86,3 +86,9 @@ describe('updateCommentCounter', () => {
     `;
   });
   
+
+  test('should update comment counter with correct count', () => {
+    updateCommentCounter();
+    const commentCounter = document.getElementById('comment-counter');
+    expect(commentCounter.textContent).toBe('(3)');
+  });
