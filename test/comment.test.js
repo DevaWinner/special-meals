@@ -44,3 +44,45 @@ jest.mock('../src/api/fetchcomments.js', () => {
     ]);
   });
 });
+
+describe('updateCommentCounter', () => {
+  beforeEach(() => {
+    // Reset the comment counter and comments list before each test
+    const popup = document.getElementById('popup');
+    popup.innerHTML = `
+      <div id="popup-content">
+        <div id="popup-header">
+          <h2 id="meal-title"></h2>
+          <button id="close-popup">X</button> 
+        </div>
+        <div id="popup-body">
+          <div id="popup-left">
+            <img id="popup-img" src="" alt="">
+            <p id="meal-instructions"></p>
+          </div>
+          <div id="popup-right">
+            <form id="comment-form">
+              <div class="form-control">
+                <label for="comment-user">Name</label>
+                <input type="text" id="comment-user" placeholder="Enter your name">
+              </div>
+              <div class="form-control">
+                <label for="comment-input">Comment</label>
+                <textarea id="comment-input" placeholder="Enter your comment"></textarea>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+            <div id="comments">
+              <h3>Comments <span id="comment-counter"></span></h3>
+              <ul id="comments-list">
+                <li class="comment-element">Comment 1</li>
+                <li class="comment-element">Comment 2</li>
+                <li class="comment-element">Comment 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
