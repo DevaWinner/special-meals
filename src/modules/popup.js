@@ -2,7 +2,8 @@
 // eslint-disable-next-line no-alert
 
 import fetchComments from '../api/fetchcomments.js';
-import { formatDate, updateCommentCounter } from './utils.js';
+import { formatDate} from './utils.js';
+import updateCommentCounter from './commentcounter.js';
 
 const createCommentElement = (comment) => {
   const commentElement = document.createElement('li');
@@ -66,7 +67,7 @@ const showPopup = async (meal) => {
     });
 
     updateCommentCounter(comments.length);
-
+    
     commentForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const username = commentUserInput.value;
@@ -115,6 +116,8 @@ const showPopup = async (meal) => {
           alert('Error posting comment');
         }
       }
+
+      updateCommentCounter();
     });
   } catch (error) {
     console.error(error);
