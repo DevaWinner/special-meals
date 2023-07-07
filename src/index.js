@@ -5,11 +5,16 @@ import fetchMeals from './api/fetchmeals.js';
 import { truncateTitle } from './modules/utils.js';
 import createMealCard from './modules/createmeals.js';
 import showPopup from './modules/popup.js';
+import itemCounter from './modules/counter.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
+  const counter = document.getElementById('count');
+  const countnum = await itemCounter();
+  counter.textContent = `(${countnum})meals`;
   const mealContainer = document.getElementById('mealContainer');
   try {
     const meals = await fetchMeals('Seafood');
+
     meals.forEach((meal, index) => {
       const mealCard = createMealCard(meal, truncateTitle);
 
