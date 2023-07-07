@@ -141,8 +141,8 @@
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
-  height: 20%;
+  gap: 1em;
+  height: 35%;
   width: 50%;
 }
 

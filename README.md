@@ -64,6 +64,10 @@
 ### Key Features <a name="key-features"></a>
 
 - [ ] **Basic layout**
+- [ ] **Improved Style and looks**
+- [ ] **Build Home Page**
+- [ ] **Populate data from API**
+- [ ] **Add comments and like functionality**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,10 +124,8 @@ In order to run this project you need:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Improved Style and looks**
-- [ ] **Build Home Page**
-- [ ] **Populate data from API**
-- [ ] **Add comments and like functionality**
+- [ ] **Update Navbar to display other meals categories**
+- [ ] **Make mobile friendly**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
