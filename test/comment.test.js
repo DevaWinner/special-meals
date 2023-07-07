@@ -108,3 +108,12 @@ describe('updateCommentCounter', () => {
       updateCommentCounter();
     }).not.toThrow();
   });
+
+  test('should update comment counter with count of 0', () => {
+    // Remove all comment elements from the comments list
+    document.getElementById('comments-list').innerHTML = '';
+    updateCommentCounter();
+    const commentCounter = document.getElementById('comment-counter');
+    expect(commentCounter.textContent).toBe('(0)');
+  });
+});
