@@ -92,3 +92,11 @@ describe('updateCommentCounter', () => {
     const commentCounter = document.getElementById('comment-counter');
     expect(commentCounter.textContent).toBe('(3)');
   });
+
+  test('should handle no comment counter element', () => {
+    // Remove the comment counter element
+    document.getElementById('comment-counter').remove();
+    expect(() => {
+      updateCommentCounter();
+    }).not.toThrow();
+  });
