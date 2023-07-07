@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Lobster&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main: #f44336;
+  --second: #f9f9f9;
+  --background: antiquewhite;
+}
+
+body {
+  font-family: 'Belanosima', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  height: 100vh;
+}
+
+/* ========= Header Styling ========== */
+
+header,
+footer {
+  display: flex;
+  background-color: var(--second);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 70px;
+  width: 95%;
+  align-items: center;
+  position: relative;
+  margin: 1.5em 5em;
+  gap: 1em;
+  padding: 0 1em;
+}
+
+.logo {
+  padding-left: 5%;
+  width: 90px;
+  height: 90px;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 10px 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2em;
+  list-style-type: none;
+  width: 100%;
+  margin-left: 1.5em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links li {
+  border-right: 3.5px solid var(--main);
+  padding: 0 1em;
+}
+
+.nav-links a:hover {
+  color: var(--main);
+}
+
+p {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+/* ======== Items display styling ======= */
+main {
+  height: calc(85vh);
+  overflow: auto;
+  border-radius: 0.5em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 5em;
+  width: 75%;
+  margin: 1.5em 5em;
+}
+
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--second);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 440px;
+  width: 400px;
+  gap: 1em;
+  transition: transform 0.1s ease-in-out;
+}
+
+.meal-card:hover {
+  transform: scale(1.03);
+}
+
+.meal-card img {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  border-radius: 8px 8px 10px 10px;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.meal-card-title {
+  font-size: 1.6rem;
+}
+
+.title button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.icon {
+  font-size: 1.6rem;
+  color: var(--main);
+}
+
+.buttons button {
+  padding: 0.7em 2em;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.title button:hover {
+  transform: scale(1.3);
+}
+
+.likes-counter {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.2rem;
+  width: 90%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+  width: 100%;
+  margin-top: 3.5em;
+}
+
+.buttons button:first-child {
+  background-color: var(--main);
+  color: var(--second);
+  border: 2px solid #f44336;
+}
+
+.buttons button:last-child {
+  background-color: #f9f9f9;
+  color: #f44336;
+  border: 2px solid #f44336;
+}
+
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
+/* ============== Footer ============ */
+
+.license {
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0 5%;
+}
+
+.footer {
+  width: 98%;
+}
