@@ -47,7 +47,6 @@ jest.mock('../src/api/fetchcomments.js', () => {
 
 describe('updateCommentCounter', () => {
   beforeEach(() => {
-    // Reset the comment counter and comments list before each test
     const popup = document.getElementById('popup');
     popup.innerHTML = `
       <div id="popup-content">
@@ -94,7 +93,6 @@ describe('updateCommentCounter', () => {
   });
 
   test('should handle no comment counter element', () => {
-    // Remove the comment counter element
     document.getElementById('comment-counter').remove();
     expect(() => {
       updateCommentCounter();
@@ -102,7 +100,6 @@ describe('updateCommentCounter', () => {
   });
 
   test('should handle no comments list element', () => {
-    // Remove the comments list element
     document.getElementById('comments-list').remove();
     expect(() => {
       updateCommentCounter();
@@ -110,7 +107,6 @@ describe('updateCommentCounter', () => {
   });
 
   test('should update comment counter with count of 0', () => {
-    // Remove all comment elements from the comments list
     document.getElementById('comments-list').innerHTML = '';
     updateCommentCounter();
     const commentCounter = document.getElementById('comment-counter');
