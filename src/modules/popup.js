@@ -1,9 +1,5 @@
 import fetchComments from '../api/fetchcomments.js';
-
-export const formatDate = (date) => {
-  const options = { year: 'numeric', month: 'short', day: 'numeric' };
-  return new Date(date).toLocaleDateString(undefined, options);
-};
+import {formatDate} from './utils.js'
 
 const showPopup = async (meal) => {
   const appId = 'KfZAQJtzqeC2UIXf6vLd';
