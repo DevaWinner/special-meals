@@ -74,7 +74,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
  - [Live Demo Link](https://devawinner.github.io/special-meals/dist/)
-- [record video](https://drive.google.com/file/d/1U6dPg05RP2RbBpXZQSYHVOtmPXZgCKVP/view)
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 To get a local copy up and running, follow these steps.
