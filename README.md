@@ -19,7 +19,7 @@
 - [📝 License](#license)
 
 
-# 📖 Leader Board <a name="about-project"></a>
+# 📖 Special Meals <a name="about-project"></a>
 
 
 **Special Meals** project is built using an API. The project allows users to view meals they like, like the meals and add comments to the meals they like. It uses an internal API to store the user interactions with the meals. The project is built using webpack and vanilla JavaScript. 
